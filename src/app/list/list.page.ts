@@ -37,7 +37,8 @@ export class ListPage implements OnInit {
       return this._list ? this._list.items : [];
   }
 
-  async removeItem(item: TodoItem){
+  async removeItem(slidingItem: ItemSliding, item: TodoItem){
+    slidingItem.close();
 
     const alert = await this.alertController.create({
       header: 'Confirmer',
@@ -47,8 +48,8 @@ export class ListPage implements OnInit {
           text: 'Non',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
+          handler: () => {
+            console.log('Confirm Cancel');
           }
         }, {
           text: 'Oui',
@@ -104,7 +105,8 @@ export class ListPage implements OnInit {
     await alert.present();
   }
 
-  async editItem(item: TodoItem){
+  async editItem(slidingItem: ItemSliding, item: TodoItem){
+    slidingItem.close();
     const alert = await this.alertController.create({
       header: 'Modifier Item',
       inputs: [

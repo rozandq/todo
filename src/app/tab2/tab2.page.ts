@@ -2,6 +2,7 @@ import { Component , OnInit } from '@angular/core';
 import {TodoList, TodoService} from '../todo.service';
 import { NavController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { ItemSliding } from 'ionic-angular';
 
 @Component({
   selector: 'app-tab2',
@@ -68,7 +69,7 @@ export class Tab2Page {
     await alert.present();
   }
 
-  async removeList(list: TodoList){
+  async removeList(slidingItem: ItemSliding, list: TodoList){
     const alert = await this.alertController.create({
       header: 'Confirmer',
       message: 'Etes vous sûr de vouloir supprimer cette liste ?',
@@ -83,6 +84,7 @@ export class Tab2Page {
         }, {
           text: 'Oui',
           handler: () => {
+            slidingItem.close();
             this.todoService.deleteList(list);
           }
         }
@@ -92,7 +94,7 @@ export class Tab2Page {
     await alert.present();
   }
 
-  async editList(list: TodoList){
+  async editList(slidingItem: ItemSliding, list: TodoList){
     const alert = await this.alertController.create({
       header: 'Modifier Liste',
       inputs: [
@@ -115,6 +117,7 @@ export class Tab2Page {
           handler: (data) => {
             console.log('Confirm Ok');
             list.name = data.nom;
+            slidingItem.close();
             this.todoService.editList(list);
           }
         }
