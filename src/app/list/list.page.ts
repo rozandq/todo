@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {TodoList, TodoService, TodoItem} from '../todo.service';
 import {forEach} from '@angular-devkit/schematics';
-import { AlertController } from '@ionic/angular';
+import { AlertController, IonItemSliding } from '@ionic/angular';
+// import { ItemSliding } from 'ionic-angular';
 
 @Component({
   selector: 'app-list',
@@ -37,7 +38,7 @@ export class ListPage implements OnInit {
       return this._list ? this._list.items : [];
   }
 
-  async removeItem(slidingItem: ItemSliding, item: TodoItem){
+  async removeItem(slidingItem: IonItemSliding, item: TodoItem){
     slidingItem.close();
 
     const alert = await this.alertController.create({
@@ -105,7 +106,7 @@ export class ListPage implements OnInit {
     await alert.present();
   }
 
-  async editItem(slidingItem: ItemSliding, item: TodoItem){
+  async editItem(slidingItem: IonItemSliding, item: TodoItem){
     slidingItem.close();
     const alert = await this.alertController.create({
       header: 'Modifier Item',
