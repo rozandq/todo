@@ -10,7 +10,7 @@
 <ion-content>
   <ion-list>
 
-    <ion-item-sliding *ngFor="let item of todos">
+    <ion-item-sliding *ngFor="let item of todos" #slidingItem>
       <ion-item>
         <ion-label>
           <h2>{{ item.name }}</h2>
@@ -18,11 +18,11 @@
           <p>{{ item.desc}}</p>
         </ion-label>
       </ion-item>
-    
+
       <ion-item-options>
-        <button danger (click)="removeItem(item)"> Supprimer</button>
+        <button danger (click)="removeItem(slidingItem, item)"> Supprimer</button>
         <!-- <button danger (click)="removeItem(item)"><icon trash></icon> Delete</button> -->
-        <button danger (click)="editItem(item)"> Modifier</button>
+        <button danger (click)="editItem(slidingItem, item)"> Modifier</button>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>

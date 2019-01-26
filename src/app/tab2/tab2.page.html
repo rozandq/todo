@@ -8,7 +8,7 @@
 
 <ion-content>
   <!-- <ion-list>
-    <ion-item *ngFor="let list of todos" routerLink="/list/{{list.uuid}}"> 
+    <ion-item *ngFor="let list of todos" routerLink="/list/{{list.uuid}}">
       <ion-item *ngFor="let list of todos" (click)="openList(list.uuid)">
       <ion-avatar slot="start">
         <img src="/docs/assets/img/avatar-finn.png"></img>
@@ -23,21 +23,21 @@
 
   <ion-list>
 
-      <ion-item-sliding *ngFor="let list of todos">
+      <ion-item-sliding *ngFor="let list of todos" #slidingItem>
         <ion-item (click)="openList(list.uuid)">
             <ion-label>
                 <h2>{{list.name}}</h2>
                 <p>Reste à faire : {{ itemsLeft(list) }}</p>
               </ion-label>
         </ion-item>
-      
+
         <ion-item-options>
-          <button danger (click)="removeList(list)"> Supprimer</button>
-          <button danger (click)="editList(list)"> Modifier</button>
+          <button danger (click)="removeList(slidingItem, list)"> Supprimer</button>
+          <button danger (click)="editList(slidingItem, list)"> Modifier</button>
         </ion-item-options>
       </ion-item-sliding>
     </ion-list>
-  
+
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button (click)=addList()>
         <ion-icon name="add"></ion-icon>
