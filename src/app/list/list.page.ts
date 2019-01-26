@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {TodoList, TodoService, TodoItem} from '../todo.service';
 import {forEach} from '@angular-devkit/schematics';
 import { AlertController, IonItemSliding } from '@ionic/angular';
+// import { ItemSliding } from 'ionic-angular';
 
 @Component({
   selector: 'app-list',
