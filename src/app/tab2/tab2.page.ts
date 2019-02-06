@@ -1,7 +1,12 @@
 import { Component , OnInit } from '@angular/core';
 import {TodoList, TodoService} from '../todo.service';
 import { NavController } from '@ionic/angular';
+<<<<<<< HEAD
 import { AlertController, IonItemSliding  } from '@ionic/angular';
+=======
+import { AlertController, IonItemSliding } from '@ionic/angular';
+//import { ItemSliding } from 'ionic-angular';
+>>>>>>> f33497cca3ffb825078256e822599c36ddcf206b
 
 @Component({
   selector: 'app-tab2',
