@@ -6,4 +6,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
+</ion-content>

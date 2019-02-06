@@ -1,8 +1,7 @@
 import { Component , OnInit } from '@angular/core';
 import {TodoList, TodoService} from '../todo.service';
 import { NavController } from '@ionic/angular';
-import { AlertController } from '@ionic/angular';
-import { ItemSliding } from 'ionic-angular';
+import { AlertController, IonItemSliding  } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -69,7 +68,7 @@ export class Tab2Page {
     await alert.present();
   }
 
-  async removeList(slidingItem: ItemSliding, list: TodoList){
+  async removeList(slidingItem: IonItemSliding, list: TodoList){
     const alert = await this.alertController.create({
       header: 'Confirmer',
       message: 'Etes vous sûr de vouloir supprimer cette liste ?',
@@ -94,7 +93,7 @@ export class Tab2Page {
     await alert.present();
   }
 
-  async editList(slidingItem: ItemSliding, list: TodoList){
+  async editList(slidingItem: IonItemSliding, list: TodoList){
     const alert = await this.alertController.create({
       header: 'Modifier Liste',
       inputs: [
