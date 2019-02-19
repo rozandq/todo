@@ -1,16 +1,11 @@
-<<<<<<< HEAD
 import { Component, ViewChild, Renderer } from '@angular/core';
 import { Platform } from '@ionic/angular';
-=======
-import { Component } from '@angular/core';
->>>>>>> f33497cca3ffb825078256e822599c36ddcf206b
 
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-<<<<<<< HEAD
 export class Tab3Page {
 
   @ViewChild("canvas") canvas : any;
@@ -38,6 +33,3 @@ export class Tab3Page {
   }
 
 }
-=======
-export class Tab3Page {}
->>>>>>> f33497cca3ffb825078256e822599c36ddcf206b

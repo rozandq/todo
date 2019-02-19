@@ -1,11 +1,7 @@
 {
   "name": "todo",
-<<<<<<< HEAD
   "integrations": {
     "cordova": {}
   },
-=======
-  "integrations": {},
->>>>>>> f33497cca3ffb825078256e822599c36ddcf206b
   "type": "angular"
 }

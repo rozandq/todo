@@ -1,3 +1,16 @@
 <ion-content>
-  <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)" (click)="click($event)"></canvas>
+  <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
 </ion-content>
+
+<ion-toolbar>
+  <ion-buttons>
+    <button id="color1" (click)="changeColor('#2ecc71')"></button>
+    <button id="color2" (click)="changeColor('#3498db')"></button>
+    <button id="color3" (click)="changeColor('#9b59b6')"></button>
+    <button id="color4" (click)="changeColor('#e74c3c')"></button>
+    <button id="color5" (click)="changeColor('#e67e22')"></button>
+    <button id="color6" (click)="changeColor('#f1c40f')"></button>
+    <button id="color7" (click)="changeColor('#ffffff')"></button>
+    <button ion-button icon-only ><ion-icon name="add"></ion-icon></button>
+  </ion-buttons>
+</ion-toolbar>

@@ -2,12 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {TodoList, TodoService, TodoItem} from '../todo.service';
 import {forEach} from '@angular-devkit/schematics';
-<<<<<<< HEAD
 import { AlertController, IonItemSliding  } from '@ionic/angular';
-=======
-import { AlertController, IonItemSliding } from '@ionic/angular';
-// import { ItemSliding } from 'ionic-angular';
->>>>>>> f33497cca3ffb825078256e822599c36ddcf206b
 
 @Component({
   selector: 'app-list',
